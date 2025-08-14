@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+export LANG=C.UTF-8
+
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 export HISTCONTROL=ignoredups:erasedups
