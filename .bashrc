@@ -35,5 +35,6 @@ alias vim='nvim'
 eval "$(starship init bash)"
 
 . "$HOME/.local/bin/env"
+. "$HOME/.nvm/nvm.sh"
 
 source <(fzf --bash)
