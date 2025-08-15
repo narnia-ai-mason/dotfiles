@@ -14,3 +14,16 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
+
+-- Line number toggle function
+local function toggle_line_numbers()
+  if vim.wo.relativenumber then
+    vim.wo.relativenumber = false
+    vim.wo.number = true
+  else
+    vim.wo.relativenumber = true
+    vim.wo.number = true
+  end
+end
+
+vim.keymap.set('n', '<leader>n', toggle_line_numbers, { desc = 'Toggle line numbers (absolute/relative)' })
