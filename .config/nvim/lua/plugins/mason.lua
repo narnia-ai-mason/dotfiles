@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason
 
@@ -13,12 +13,15 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
+        "ruff-lsp",
+        "basedpyright",
 
         -- install formatters
         "stylua",
+        "ruff",
 
         -- install debuggers
-        "debugpy",
+        -- "debugpy",
 
         -- install any other package
         "tree-sitter-cli",

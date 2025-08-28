@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -22,6 +22,7 @@ return {
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
+          "python",
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
@@ -33,9 +34,12 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- fully override the default formatting function
+        if client.name == "ruff_lsp" then
+          return true
+        end
+        return false
+      end
     },
     -- enable servers that you already have installed without mason
     servers = {
@@ -45,6 +49,8 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      ruff_lsp = {},
+      basedpyright = {},
     },
     -- customize how language servers are attached
     handlers = {

@@ -7,7 +7,7 @@ export HISTCONTROL=ignoredups:erasedups
 
 
 # Install required cli tools if not already installed
-if [[ ! -f "$HOME/.cli-tools-installed" ]]; then
+if [[ ! -f "$HOME/.cli_tools_installed" ]]; then
   curl -fsSL https://raw.githubusercontent.com/narnia-ai-mason/cli-tools-installer/main/install.sh | bash
 fi
 
@@ -87,13 +87,11 @@ fi
 
 # Configure autosuggestions
 if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  echo "Setting up autosuggestions..."
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Configure syntax highlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  echo "Setting up syntax highlighting..."
   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
@@ -104,3 +102,10 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"
+
+# Task Master aliases added on 8/21/2025
+alias tm='task-master'
+alias taskmaster='task-master'
+export PATH="/Users/minsikseo/.pixi/bin:$PATH"
