@@ -107,5 +107,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Task Master aliases added on 8/21/2025
 alias tm='task-master'
-alias taskmaster='task-master'
 export PATH="/Users/minsikseo/.pixi/bin:$PATH"
+
+# opencode
+export PATH=/Users/minsikseo/.opencode/bin:$PATH
