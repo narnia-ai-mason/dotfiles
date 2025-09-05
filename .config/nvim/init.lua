@@ -14,6 +14,9 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.opt.maxmempattern = 10000
+vim.opt.wrap = true
+vim.opt.textwidth = 0
 
 -- validate that lazy is available
 if not pcall(require, "lazy") then
