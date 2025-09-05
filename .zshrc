@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export LANG=C.UTF-8
 
 export HISTSIZE=10000
@@ -107,5 +109,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Task Master aliases added on 8/21/2025
 alias tm='task-master'
-alias taskmaster='task-master'
 export PATH="/Users/minsikseo/.pixi/bin:$PATH"
+
+# opencode
+export PATH=/Users/minsikseo/.opencode/bin:$PATH
