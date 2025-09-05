@@ -32,7 +32,7 @@ fi
 # Configure zoxide for enhanced cd
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
-  alias cd='z'
+  # alias cd='z'
 fi
 
 # Configure eza for enhanced ls

@@ -6,6 +6,19 @@
 return {
   -- use mason-tool-installer for automatically installing Mason packages
   {
+    "williamboman/mason.nvim",
+    opts = {
+      -- pip 설정을 추가하여 공식 PyPI 저장소만 사용하도록 강제합니다.
+      pip = {
+        install_args = {
+          "--index-url",
+          "https://pypi.org/simple",
+        },
+      },
+    },
+  },
+
+  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     -- overrides `require("mason-tool-installer").setup(...)`
     opts = {
@@ -13,7 +26,7 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
-        "ruff-lsp",
+        -- "ruff-lsp",
         "basedpyright",
 
         -- install formatters

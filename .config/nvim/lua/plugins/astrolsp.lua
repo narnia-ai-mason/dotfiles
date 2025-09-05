@@ -35,7 +35,7 @@ return {
       },
       timeout_ms = 1000, -- default format timeout
       filter = function(client) -- fully override the default formatting function
-        if client.name == "ruff_lsp" then
+        if client.name == "ruff" then
           return true
         end
         return false
@@ -49,7 +49,7 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      ruff_lsp = {},
+      ruff = {},
       basedpyright = {},
     },
     -- customize how language servers are attached
