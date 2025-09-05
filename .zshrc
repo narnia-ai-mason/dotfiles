@@ -32,7 +32,7 @@ fi
 # Configure zoxide for enhanced cd
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
-  alias cd='z'
+  # alias cd='z'
 fi
 
 # Configure eza for enhanced ls
@@ -109,3 +109,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias tm='task-master'
 alias taskmaster='task-master'
 export PATH="/Users/minsikseo/.pixi/bin:$PATH"
+
+alias julab='xvfb-run jupyter-lab --ip=0.0.0.0 --allow-root --no-browser'
