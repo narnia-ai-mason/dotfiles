@@ -1,0 +1,2 @@
+# Neovim lazy.nvim lock file (장치마다 다를 수 있음)
+.config/nvim/lazy-lock.json
