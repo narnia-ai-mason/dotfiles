@@ -102,11 +102,16 @@ alias compress-mp4='just --justfile ~/.config/just/justfile compress-mp4'
 alias format-md='npx prettier --write'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias zl='zoxide query -l'
 alias sg='ast-grep run'
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init zsh --cmd cd)"
+if command -v fzf &> /dev/null; then
+    eval "$(fzf --zsh)"
+fi
 
-source /Users/minsikseo/.config/broot/launcher/bash/br
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh --cmd cd)"
+    alias zl='zoxide query -l'
+fi
+
+[[ -f "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
