@@ -36,3 +36,17 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.api.nvim_create_autocmd("FocusLost", {
+  callback = function()
+    vim.opt.winhighlight = "Normal:NormalNC"
+  end
+})
+
+vim.api.nvim_create_autocmd("FocusGained", {
+  callback = function()
+    vim.opt.winhighlight = ""
+  end
+})
+
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "#32302F" })
